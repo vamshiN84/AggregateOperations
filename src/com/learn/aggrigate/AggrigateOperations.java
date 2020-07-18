@@ -14,6 +14,9 @@ public class AggrigateOperations {
 				new Person(1,35,"Asrith",Sex.MALE));
 		Double d = person.stream().mapToInt(Person::getAge).average().getAsDouble();
 		System.out.println(d);
+		int t = person.stream().mapToInt(Person::getAge).sum();
+		System.out.println(t);
+		
 
 	}
 
