@@ -3,6 +3,7 @@ package com.learn.aggrigate;
 import java.util.Arrays;
 import java.util.List;
 import java.util.OptionalDouble;
+import java.util.stream.Collectors;
 
 public class AggrigateOperations {
 
@@ -16,6 +17,9 @@ public class AggrigateOperations {
 		System.out.println(d);
 		int t = person.stream().mapToInt(Person::getAge).sum();
 		System.out.println(t);
+		person.stream().collect(Collectors.groupingBy(Person::getGender,Collectors.mapping(
+                Person::getName,
+                Collectors.toList())));
 		
 
 	}
