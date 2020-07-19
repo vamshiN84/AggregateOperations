@@ -2,6 +2,7 @@ package com.learn.aggrigate;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Map;
 import java.util.OptionalDouble;
 import java.util.stream.Collectors;
 
@@ -17,11 +18,11 @@ public class AggrigateOperations {
 		System.out.println(d);
 		int t = person.stream().mapToInt(Person::getAge).sum();
 		System.out.println(t);
-		person.stream().collect(Collectors.groupingBy(Person::getGender,Collectors.mapping(
+		Map<Sex, List<String>> mp= person.stream().collect(Collectors.groupingBy(Person::getGender,Collectors.mapping(
                 Person::getName,
                 Collectors.toList())));
 		
-
+System.out.println(mp);
 	}
 
 }

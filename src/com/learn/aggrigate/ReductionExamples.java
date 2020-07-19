@@ -25,6 +25,7 @@ public class ReductionExamples {
 			    .map(Person::getAge)
 			    .collect(Collectors.toCollection(TreeSet::new));
 			                   
+		System.out.println(ps);
 		Map<Sex, List<String>> namesByGender =
 			    person.stream().collect(Collectors.groupingBy(Person::getGender,Collectors.mapping(
 			                    Person::getName,
